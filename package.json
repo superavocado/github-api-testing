@@ -1,0 +1,31 @@
+{
+  "name": "github-api-testing",
+  "version": "1.0.0",
+  "description": "rest api testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superavocado/github-api-testing.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "test"
+  ],
+  "author": "Tina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/superavocado/github-api-testing/issues"
+  },
+  "homepage": "https://github.com/superavocado/github-api-testing#readme",
+  "dependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "axios": "^0.19.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
