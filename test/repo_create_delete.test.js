@@ -34,7 +34,6 @@ describe('create and delete a new repo', async () => {
             for (let r of res) {
                 repos.push(r.name);
             }
-            console.log(repos);
             expect(repos).not.to.include('playground')
         }, 3000);
 
