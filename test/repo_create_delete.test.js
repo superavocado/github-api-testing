@@ -3,7 +3,7 @@ const axios = require('axios');
 axios.defaults.baseURL = "https://api.github.com";
 usrAuth = { auth: { username: 'test007-github', password: 'Test007@github' } };
 
-describe('create and delete a new repo', () => {
+describe('create and delete a new repo', async () => {
     it('create a new repo named playground', async () => {
         let res = await axios.post('/user/repos',
             { name: 'playground' }, usrAuth);
@@ -21,20 +21,15 @@ describe('create and delete a new repo', () => {
 
     });
 
-    it('delet the new repo', async () => {
-        let res = await axios.delete('/repos/test007-github/playground', usrAuth);
+    it('delete the new repo', async () => {
+        let res  = await axios.delete('/repos/test007-github/playground', usrAuth)
+                
         expect(res.status).to.be.equal(204);
-        let res1 = await axios.get('/user/repos', usrAuth);
-        res1 = res1.data;
-        let repos = [];
-        for (let r of res1) {
-            repos.push(r.name);
-        }
-        console.log(repos);
+
     });
 
     it('The new repo is deleted', async () => {
-        let res = await axios.get('/user/repos', usrAuth);
+        let res = await axios.get('/user/repos', usrAuth)
         res = res.data;
         let repos = [];
         for (let r of res) {
@@ -42,7 +37,6 @@ describe('create and delete a new repo', () => {
         }
         console.log(repos);
         expect(repos).not.to.include('playground')
-
     });
 
 });
