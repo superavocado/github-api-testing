@@ -23,12 +23,13 @@ describe('create and delete a new repo', async () => {
 
     it('delete the new repo', async () => {
         let res  = await axios.delete('/repos/test007-github/playground', usrAuth)
-                
-        expect(res.status).to.be.equal(204);
-
+        setTimeout(() => {
+            expect(res.status).to.be.equal(204);
+        }, 2000);      
     });
 
     it('The new repo is deleted', async () => {
+        
         let res = await axios.get('/user/repos', usrAuth)
         res = res.data;
         let repos = [];
