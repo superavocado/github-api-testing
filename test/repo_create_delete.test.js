@@ -22,22 +22,22 @@ describe('create and delete a new repo', async () => {
     });
 
     it('delete the new repo', async () => {
-        let res  = await axios.delete('/repos/test007-github/playground', usrAuth)
-        setTimeout(() => {
-            expect(res.status).to.be.equal(204);
-        }, 2000);      
+        let res = await axios.delete('/repos/test007-github/playground', usrAuth)
+        expect(res.status).to.be.equal(204);
     });
 
     it('The new repo is deleted', async () => {
-        
-        let res = await axios.get('/user/repos', usrAuth)
-        res = res.data;
-        let repos = [];
-        for (let r of res) {
-            repos.push(r.name);
-        }
-        console.log(repos);
-        expect(repos).not.to.include('playground')
+        setTimeout(async () => {
+            let res = await axios.get('/user/repos', usrAuth)
+            res = res.data;
+            let repos = [];
+            for (let r of res) {
+                repos.push(r.name);
+            }
+            console.log(repos);
+            expect(repos).not.to.include('playground')
+        }, 3000);
+
     });
 
 });
