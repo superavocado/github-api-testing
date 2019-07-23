@@ -24,6 +24,13 @@ describe('create and delete a new repo', () => {
     it('delet the new repo', async () => {
         let res = await axios.delete('/repos/test007-github/playground', usrAuth);
         expect(res.status).to.be.equal(204);
+        let res1 = await axios.get('/user/repos', usrAuth);
+        res1 = res1.data;
+        let repos = [];
+        for (let r of res1) {
+            repos.push(r.name);
+        }
+        console.log(repos);
     });
 
     it('The new repo is deleted', async () => {
