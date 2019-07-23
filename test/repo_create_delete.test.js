@@ -35,7 +35,7 @@ describe('create and delete a new repo', async () => {
                 repos.push(r.name);
             }
             expect(repos).not.to.include('playground')
-        }, 3000);
+        }, 1000);
 
     });
 
