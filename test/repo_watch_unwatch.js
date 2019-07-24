@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const axios = require('axios');
 axios.defaults.baseURL = "https://api.github.com";
-usrAuth = { auth: { username: 'test007-github', password: 'Test007@github' } };
+usrAuth = { auth: { username: 'test007-github', password: 'XXX' } };
 
 describe('watch and unwatch a repo', () => {
     it('watch a repo', async () => {
