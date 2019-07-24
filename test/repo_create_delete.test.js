@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const axios = require('axios');
 axios.defaults.baseURL = "https://api.github.com";
-usrAuth = { auth: { username: 'test007-github', password: 'XXX' } };
+usrAuth = { auth: { username: 'test007-github', password: 'Test007@github' } };
 
 describe('create and delete a new repo', async () => {
     it('create a new repo named playground', async () => {

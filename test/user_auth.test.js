@@ -7,7 +7,7 @@ describe('user authentication', () =>{
         let res = await axios.get('/user/repos', {
             auth: {
                 username: 'test007-github',
-                password: 'XXX'
+                password: 'Test007@github'
             }
         })
         expect(res.status).to.equal(200);
